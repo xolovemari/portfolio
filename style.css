@@ -34,7 +34,7 @@ body {
     justify-content: center;
 }
 
-.title, .description, .tools-title, .about-title, .about-description {
+.title, .description, .tools-title, .about-title, .about-description, .projects-title {
     color: var(--text);
 }
 
@@ -89,7 +89,7 @@ body {
     justify-content: center;
 }
 
-.tools-title, .about-title {
+.tools-title, .about-title, .projects-title {
     font-size: 35px;
     line-height: 80px;
     
@@ -117,4 +117,46 @@ body {
     100% {
         transform: translateX(-50%);
     }
+}
+
+.projects {
+    display: flex;
+    width: 60vw;
+    min-height: 80vh;
+    margin: 10vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.carousel {
+    display: flex;
+    scroll-behavior: smooth;
+    gap: 1.2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 1rem 0;
+    width: 100%;
+    margin: 2rem 0;
+    max-width: 1200px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.card {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    width: 300px;
+    min-height: 250px;
+
+    background: var(--secondary);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1rem;
+    transition: transform 0.3s ease;
 }
